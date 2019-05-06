@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gra.cs" />
     <Compile Include="Klient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StanGry.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
