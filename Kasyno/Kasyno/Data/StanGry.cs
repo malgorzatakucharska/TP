@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kasyno.Data
 {
-    class StanGry
+    public class StanGry
     {
         public Gra gra { get; set; }
         public int ilosc { get; set; }

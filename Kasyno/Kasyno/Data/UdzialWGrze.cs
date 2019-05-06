@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kasyno.Data
 {
-    class UdzialWGrze
+    public class UdzialWGrze
     {
         public StanGry stangry {get; set;}
-        public Klient klient {get; set }
+        public Klient klient { get; set; }
     }
 }
