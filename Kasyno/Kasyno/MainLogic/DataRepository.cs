@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace Kasyno.MainLogic
 {
-    class DataRepository
+    public class DataRepository
     {
         private DataContext data;
+        private DataFiller filler;
+
+        public DataRepository(DataFiller filler, DataContext data)
+        {
+            this.filler = filler;
+            this.data = data;
+        }
     }
-}
+    }
