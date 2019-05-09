@@ -46,6 +46,7 @@
     <Compile Include="MainLogic\DataContext.cs" />
     <Compile Include="MainLogic\DataFiller.cs" />
     <Compile Include="MainLogic\DataRepository.cs" />
+    <Compile Include="MainLogic\DataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\StanGry.cs" />
     <Compile Include="Data\UdzialWGrze.cs" />
