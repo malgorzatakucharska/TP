@@ -32,7 +32,7 @@ namespace UnitTest
 
             Klient customer = new Klient()
             {
-                imie = "Jak",
+                imie = "Jan",
                 nazwisko = "Nowak",
                 wiek = 40,
                 adresEmail = "jannowak@gmail.com"
@@ -136,5 +136,100 @@ namespace UnitTest
             //sprawdzenie czy kolekcja zawiera dodany element
             Assert.IsTrue(data.stanygier.Contains(stan));
         }
+
+        //test dla metod Get
+
+        [TestMethod]
+        public void GetKlientTest()
+        {
+            int randomIndex = new Random().Next(0, data.klienci.Count - 1);
+            int outOfRangeIndex = data.klienci.Count;
+
+            //sprawdza czy metoda zwraca odpowiedni obiekt dla indeksu
+            Assert.AreEqual(data.klienci[randomIndex], dataRepository.GetKlient(randomIndex));
+
+            //sprawdza czy metoda zwraca null
+            Assert.AreEqual(null, dataRepository.GetKlient(outOfRangeIndex));
+        }
+
+        [TestMethod]
+        public void GetGraTest()
+        {
+            Dictionary<int, Gra>.KeyCollection keysList = data.gry.Keys;
+
+            foreach (int key in keysList)
+            {
+                //sprawdza czy metoda zwraca odpowiedni obiekt dla indeksu
+                Assert.AreEqual(data.gry[key], dataRepository.GetGra(key));
+            }
+            //sprawdza czy metoda zwraca null
+            Assert.AreEqual(null, dataRepository.GetGra(-1));
+        }
+
+        [TestMethod]
+        public void GetUdzialWGrzeTest()
+        {
+            int randomIndex = new Random().Next(0, data.udzialywgrze.Count - 1);
+            int outOfRangeIndex = data.udzialywgrze.Count;
+
+            //sprawdza czy metoda zwraca odpowiedni obiekt dla indeksu
+            Assert.AreEqual(data.udzialywgrze[randomIndex], dataRepository.GetUdzialWGrze(randomIndex));
+
+            //sprawdza czy metoda zwraca null
+            Assert.AreEqual(null, dataRepository.GetUdzialWGrze(outOfRangeIndex));
+        }
+
+        [TestMethod]
+        public void GetStanGryTest()
+        {
+            int randomIndex = new Random().Next(0, data.stanygier.Count - 1);
+            int outOfRangeIndex = data.stanygier.Count;
+
+            //sprawdza czy metoda zwraca odpowiedni obiekt dla indeksu
+            Assert.AreEqual(data.stanygier[randomIndex], dataRepository.GetStanGry(randomIndex));
+
+            //sprawdza czy metoda zwraca null
+            Assert.AreEqual(null, dataRepository.GetStanGry(outOfRangeIndex));
+        }
+
+        //testy dla metod GetAll
+
+        [TestMethod]
+        public void GetAllKlienciTest()
+        {
+            //sprawdza czy zawartość kolekcji jest dopasowana
+            Assert.AreEqual(data.klienci, dataRepository.GetAllKlienci());
+        }
+
+        [TestMethod]
+        public void GetAllGryTest()
+        {
+            IEnumerable<Gra> listOFGry = dataRepository.GetAllGry();
+
+            //sprawdza czy zawartość kolekcji jest dopasowana
+            foreach (Gra gra in listOfGra)
+            {
+                Assert.IsTrue(data.gry.Values.Contains(AddStanGryTest));
+            }
+        }
+
+        [TestMethod]
+        public void GetAllUdzialWGrzeTest()
+        {
+            //sprawdza czy zawartość kolekcji jest dopasowana
+            Assert.AreEqual(data.udzialywgrze, dataRepository.GetAllUdzialyWGrze());
+        }
+
+        [TestMethod]
+        public void GetAllStanyGierTest()
+        {
+            //sprawdza czy zawartość kolekcji jest dopasowana
+            Assert.AreEqual(data.stanygier, dataRepository.GetAllStanyGier());
+        }
+
+
+        //testy dla metod Update
+
+
     }
 }
