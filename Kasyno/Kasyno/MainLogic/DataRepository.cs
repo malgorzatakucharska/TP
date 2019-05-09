@@ -96,5 +96,50 @@ namespace Kasyno.MainLogic
         {
             return data.udzialywgrze;
         }
+        //metody Update
+        public void UpdateKlient(int i, Klient nowyklient)
+        {
+            Klient klient = data.klienci[i];
+
+            klient.imie = nowyklient.imie;
+            klient.nazwisko = nowyklient.nazwisko;
+            klient.wiek = nowyklient.wiek;
+            klient.adresEmail = nowyklient.adresEmail;
+        }
+        public void UpdateGra(int i, Gra nowaGra)
+        {
+            data.gry[i].nazwa = nowaGra.nazwa;
+        }
+        public void UpdateStanGry(int i, StanGry nowyStan)
+        {
+            StanGry stan = data.stanygier[i];
+
+            stan.gra = nowyStan.gra;
+            stan.dataUruchomienia = nowyStan.dataUruchomienia;
+        }
+        public void UpdateUdzialWGrze(int i, UdzialWGrze nowyUdzial)
+        {
+            UdzialWGrze udzial = data.udzialywgrze[i];
+
+            udzial.stangry = nowyUdzial.stangry;
+            udzial.klient = nowyUdzial.klient;
+        }
+        // metody Delete
+        public void DeleteKlient(int i)
+        {
+            data.klienci.RemoveAt(i);
+        }
+        public void DeleteGra(int i)
+        {
+            data.gry.Remove(i);
+        }
+        public void DeleteStanGry(int i)
+        {
+            data.stanygier.RemoveAt(i);
+        }
+        public void DeleteUdzialWGrze(int i)
+        {
+            data.udzialywgrze.RemoveAt(i);
+        }
     }
     }
