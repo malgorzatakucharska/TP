@@ -229,7 +229,75 @@ namespace UnitTest
 
 
         //testy dla metod Update
+        //testy dla metod Delete
+        [TestMethod]
+        public void DeleteKlientTest()
+        {
 
+            int staryrozmiar = data.klienci.Count;
+            int i = new Random().Next(0, staryrozmiar - 1);
 
+            Klient removedCustomer = data.klienci[i];
+
+            dataRepository.DeleteKlient(i);
+
+            //sprawdza, czy rozmiar sie zmiejszył
+            Assert.AreNotEqual(staryrozmiar, data.klienci.Count);
+
+            //sprawdza czy obiekt został usunięty
+            Assert.IsFalse(data.klienci.Contains(removedCustomer));
+        }
+        [TestMethod]
+        public void DeleteGraTest()
+        {
+
+            int staryrozmiar = data.gry.Count;
+            int i = 0021;
+
+            Gra removedCD = data.gry[i];
+
+            dataRepository.DeleteGra(i);
+
+            //sprawdza, czy rozmiar sie zmiejszył
+            Assert.AreNotEqual(staryrozmiar, data.gry.Count);
+
+            //sprawdza czy obiekt został usunięty
+            Assert.IsFalse(data.gry.ContainsValue(removedCD));
+            Assert.IsFalse(data.gry.ContainsKey(removedCD.id));
+        }
+        [TestMethod]
+        public void DeleteStanGryTest()
+        {
+
+            int oldCollectionSize = data.stanygier.Count;
+            int i = new Random().Next(0, oldCollectionSize - 1);
+
+            StanGry removedCDState = data.stanygier[i];
+
+            dataRepository.DeleteStanGry(i);
+
+            //sprawdza, czy rozmiar sie zmiejszył
+            Assert.AreNotEqual(oldCollectionSize, data.stanygier.Count);
+
+            //sprawdza czy obiekt został usunięty
+            Assert.IsFalse(data.stanygier.Contains(removedCDState));
+        }
+        [TestMethod]
+        public void DeleteUdzialWGrzeTest()
+        {
+
+            int oldCollectionSize = data.udzialywgrze.Count;
+            int i = new Random().Next(0, oldCollectionSize - 1);
+
+            UdzialWGrze removedEvent = data.udzialywgrze[i];
+
+            dataRepository.DeleteUdzialWGrze(i);
+
+            //check if list size is decreased
+            Assert.AreNotEqual(oldCollectionSize, data.udzialywgrze.Count);
+
+            //check if object is removed from collection
+            Assert.IsFalse(data.udzialywgrze.Contains(removedEvent));
+        }
     }
 }
