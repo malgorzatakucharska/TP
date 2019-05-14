@@ -30,7 +30,7 @@ namespace Kasyno.MainLogic
         {
             data.stanygier.Add(stan);
         }
-        public void AddUdziałWGrze(UdzialWGrze udzial)
+        public void AddUdzialWGrze(UdzialWGrze udzial)
         {
             data.udzialywgrze.Add(udzial);
         }
