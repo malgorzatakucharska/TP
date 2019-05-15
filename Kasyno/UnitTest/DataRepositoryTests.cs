@@ -77,7 +77,7 @@ namespace UnitTest
             Gra gra = new Gra()
             {
                 id = 0021,
-                nazwa = "Ruletka",
+                nazwa = "Ruletka"
             };
 
             StanGry stan = new StanGry()
