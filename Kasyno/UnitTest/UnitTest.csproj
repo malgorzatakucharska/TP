@@ -65,6 +65,7 @@
     <Compile Include="DataRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WypelnianieStalymi.cs" />
+    <Compile Include="WypelnianieZPliku.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kasyno\Kasyno.csproj">

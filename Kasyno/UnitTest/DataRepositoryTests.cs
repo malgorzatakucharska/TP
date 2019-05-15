@@ -20,6 +20,7 @@ namespace UnitTest
         public void InitializeTests()
         {
             data = new DataContext();
+            filler = new WypelnianieStalymi();
             dataRepository = new DataRepository(filler, data);
         }
 
