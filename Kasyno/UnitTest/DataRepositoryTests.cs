@@ -100,7 +100,7 @@ namespace UnitTest
                 klient = klient
             };
 
-            dataRepository.AddUdziałWGrze(udzial);
+            dataRepository.AddUdzialWGrze(udzial);
             int rozmiarnowy = data.udzialywgrze.Count;
 
             // sprawdza rozmiar starej i nowej kolekcji

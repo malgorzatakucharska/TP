@@ -67,5 +67,136 @@ namespace Kasyno.MainLogic
             }
             return data;
         }
+        public void AddUdzialWGrze(Klient klient, StanGry stan)
+        {
+            bool isUdzialWGrzeExist = repository.GetAllUdzialyWGrze().Any(e => e.stangry.Equals(stan) && e.klient.Equals(klient));
+
+            if (!isUdzialWGrzeExist)
+            {
+                UdzialWGrze evt = new UdzialWGrze() { klient = klient, stangry = stan };
+                repository.AddUdzialWGrze(evt);
+            }
+        }
+
+        public void AddCustomer(Klient klient)
+        {
+            IEnumerable<Klient> biezacyKlient = repository.GetAllKlienci();
+
+            if (!biezacyKlient.Contains(klient))
+            {
+                repository.AddKlient(klient);
+            }
+        }
+
+        public void AddGra(Gra gra)
+        {
+            bool isGraExist = repository.GetAllGry().Where(x => x.id == gra.id).Any();
+
+            if (!isGraExist)
+            {
+                repository.AddGra(gra);
+            }
+        }
+
+        public void AddCDState(Gra gra)
+        {
+            bool isGraExist = repository.GetAllGry().Where(x => x.id == gra.id).Any();
+            DateTimeOffset biezacaData = DateTimeOffset.Now;
+
+            if (isGraExist)
+            {
+                repository.AddStanGry(new StanGry() { gra = gra, dataUruchomienia = biezacaData });
+            }
+        }
+
+        public void UpdateKlient(int i, Klient klient)
+        {
+            int iloscelementow = repository.GetAllKlienci().Count();
+
+            if (iloscelementow > i)
+            {
+                repository.UpdateKlient(i, klient);
+            }
+        }
+
+        public void UpdateGra(int id, Gra gra)
+        {
+            bool isGraExist = repository.GetAllGry().Where(x => x.id == id).Any();
+
+            if (isGraExist)
+            {
+                repository.UpdateGra(id, gra);
+            }
+        }
+
+        public void UpdateUdzialWGrze(int i, UdzialWGrze udzial)
+        {
+            int iloscelementow = repository.GetAllUdzialyWGrze().Count();
+
+            if (iloscelementow > i)
+            {
+                repository.UpdateUdzialWGrze(i, udzial);
+            }
+        }
+
+        public void UpdateStanGry(int i, StanGry stan)
+        {
+            int iloscelementow = repository.GetAllStanyGier().Count();
+
+            if (iloscelementow > i)
+            {
+                repository.UpdateStanGry(i, stan);
+            }
+        }
+
+        public void DeleteKlient(int i)
+        {
+            int iloscelementow = repository.GetAllKlienci().Count();
+
+            if (iloscelementow > i)
+            {
+                repository.DeleteKlient(i);
+            }
+        }
+
+        public void DeleteGra(int i)
+        {
+            bool isGraExist = repository.GetAllGry().Where(x => x.id == i).Any();
+
+            if (isGraExist)
+            {
+                repository.DeleteGra(i);
+            }
+        }
+
+        public void DeleteUdzialWGrze(int i)
+        {
+            int iloscelemntow = repository.GetAllUdzialyWGrze().Count();
+
+            if (iloscelemntow > i)
+            {
+                repository.DeleteUdzialWGrze(i);
+            }
+        }
+
+        public void DeleteStanGry(int i)
+        {
+            int iloscelementow = repository.GetAllStanyGier().Count();
+
+            if (iloscelementow > i)
+            {
+                repository.DeleteStanGry(i);
+            }
+        }
+
+        public List<Klient> GetKlientbynazwisko(string nazwisko)
+        {
+            return repository.GetAllKlienci().Where(c => c.nazwisko == nazwisko).ToList();
+        }
+
+        public Dictionary<int, Gra> GetGraById(int id)
+        {
+            return repository.GetAllGry().Where(d => d.id == id).ToDictionary(d => d.id);
+        }
     }
 }
