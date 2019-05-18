@@ -1,16 +1,14 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Kasyno.Data;
 using Kasyno.MainLogic;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace UnitTest
 {
     [TestClass]
-    class DataRepositoryTests
+    public class DataRepositoryTests
     {
         DataContext data;
         DataFiller filler;
