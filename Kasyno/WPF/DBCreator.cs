@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace WPF
 {
-    public class DataContext: DbContext
+    public class DBCreator: DbContext
     {
-        public DataContext() : base("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = master; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False") { }
+        public DBCreator() : base("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = master; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False") { }
 
         public DbSet<Gra> Gry { get; set; }
         public DbSet<Klient> Klienci { get; set; }
@@ -19,7 +19,7 @@ namespace WPF
         public DbSet<UdzialWGrze> Udzialy { get; set; }
 
         public void inicjalizuj() {
-            using (var context = new DataContext())
+            using (var context = new DBCreator())
             {
                 Klient k1 = new Klient()
                 {
