@@ -15,7 +15,7 @@ namespace UnitTest
         {
             List<Klient> klienci = context.klienci;
             Dictionary<int, Gra> gry = context.gry;
-            ObservableCollection<UdzialWGrze> udzialy = context.udzialywgrze;
+            ObservableCollection<UdzialWGrze> udzialywgrze = context.udzialywgrze;
             List<StanGry> stanygier = context.stanygier;
 
 
@@ -101,9 +101,9 @@ namespace UnitTest
             stanygier.Add(stangry1);
             stanygier.Add(stangry2);
             stanygier.Add(stangry3);
-            udzialy.Add(udzial1);
-            udzialy.Add(udzial2);
-            udzialy.Add(udzial3);
+            udzialywgrze.Add(udzial1);
+            udzialywgrze.Add(udzial2);
+            udzialywgrze.Add(udzial3);
         }
     }
 }
