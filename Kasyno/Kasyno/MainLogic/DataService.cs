@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kasyno.MainLogic
 {
-    class DataService
+    public class DataService
     {
         private DataRepository repository;
 
@@ -15,6 +15,7 @@ namespace Kasyno.MainLogic
         {
             this.repository = repository;
         }
+
         public string showAllKlients(IEnumerable<Klient> klienci)
         {
             string data = "";
@@ -78,7 +79,7 @@ namespace Kasyno.MainLogic
             }
         }
 
-        public void AddCustomer(Klient klient)
+        public void AddKlient(Klient klient)
         {
             IEnumerable<Klient> biezacyKlient = repository.GetAllKlienci();
 

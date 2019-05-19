@@ -17,7 +17,7 @@ namespace UnitTest
 
             List<Klient> klienci = context.klienci;
             Dictionary<int, Gra> gry = context.gry;
-            ObservableCollection<UdzialWGrze> udzialy = context.udzialywgrze;
+            ObservableCollection<UdzialWGrze> udzialywgrze = context.udzialywgrze;
             List<StanGry> stanygier = context.stanygier;
 
             try
@@ -34,7 +34,7 @@ namespace UnitTest
                     klienci.Add(klient);
                     gry.Add(gra.id, gra);
                     stanygier.Add(stan);
-                    udzialy.Add(udzial);
+                    udzialywgrze.Add(udzial);
                 }
                 Console.Write(klienci.Count);
             }
