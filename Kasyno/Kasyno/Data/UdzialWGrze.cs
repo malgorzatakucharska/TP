@@ -8,6 +8,7 @@ namespace Kasyno.Data
 {
     public class UdzialWGrze
     {
+        public int Id { get; set; }
         public StanGry stangry {get; set;}
         public Klient klient { get; set; }
     }

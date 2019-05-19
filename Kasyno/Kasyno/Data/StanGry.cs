@@ -8,6 +8,7 @@ namespace Kasyno.Data
 {
     public class StanGry
     {
+        public int Id { get; set; }
         public Gra gra { get; set; }
         public DateTimeOffset dataUruchomienia { get; set; }
     }

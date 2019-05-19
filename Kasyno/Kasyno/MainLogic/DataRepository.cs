@@ -25,7 +25,7 @@ namespace Kasyno.MainLogic
         }
         public void AddGra(Gra gra)
         {
-            data.gry.Add(gra.id, gra);
+            data.gry.Add(gra.Id, gra);
         }
         public void AddStanGry(StanGry stan)
         {

@@ -56,7 +56,7 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0021,
+                Id = 0021,
                 nazwa = "Ruletka"
             };
 
@@ -113,7 +113,7 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0041,
+                Id = 0041,
                 nazwa = "Ruletka"
             };
 
@@ -163,12 +163,12 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0041,
+                Id = 0041,
                 nazwa = "Ruletka"
             };
 
             //try to update empty dictionary
-            service.UpdateGra(gra.id, gra);
+            service.UpdateGra(gra.Id, gra);
 
             //check if dictionary is still empty
             Assert.AreEqual(0, data.gry.Count);
@@ -183,7 +183,7 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0021,
+                Id = 0021,
                 nazwa = "Ruletka"
             };
 
@@ -227,7 +227,7 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0021,
+                Id = 0021,
                 nazwa = "Ruletka"
             };
 
@@ -267,7 +267,7 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0021,
+                Id = 0021,
                 nazwa = "Ruletka"
             };
 
@@ -297,7 +297,7 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0021,
+                Id = 0021,
                 nazwa = "Ruletka"
             };
 

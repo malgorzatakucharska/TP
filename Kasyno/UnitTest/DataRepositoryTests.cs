@@ -53,7 +53,7 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0021,
+                Id = 0021,
                 nazwa = "Ruletka",
             };
 
@@ -75,7 +75,7 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0004,
+                Id = 0004,
                 nazwa = "Poker"
             };
 
@@ -116,7 +116,7 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0004,
+                Id = 0004,
                 nazwa = "Poker",
             };
 
@@ -259,20 +259,20 @@ namespace UnitTest
         {
             Gra gra = new Gra()
             {
-                id = 0023,
+                Id = 0023,
                 nazwa = "JednorekiBandyta"
             };
 
             int oldDictSize = data.gry.Count;
 
-            dataRepository.UpdateGra(gra.id, gra);
+            dataRepository.UpdateGra(gra.Id, gra);
 
             ///sprawdza czy liczba nie zostala zmieniona
             Assert.AreEqual(oldDictSize, data.gry.Count);
 
             //sprawdza wlasciwosci
-            Assert.AreEqual(gra.id, data.gry[gra.id].id);
-            Assert.AreEqual(gra.nazwa, data.gry[gra.id].nazwa);
+            Assert.AreEqual(gra.Id, data.gry[gra.Id].Id);
+            Assert.AreEqual(gra.nazwa, data.gry[gra.Id].nazwa);
 
         }
         [TestMethod]
@@ -284,7 +284,7 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0028,
+                Id = 0028,
                 nazwa = "JednorekiBandyta"
             };
 
@@ -314,7 +314,7 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0028,
+                Id = 0028,
                 nazwa = "JednorekiBandyta"
             };
 
@@ -382,7 +382,7 @@ namespace UnitTest
 
             //sprawdza czy kolekcja nie zawiera elementu
            Assert.IsFalse(data.gry.ContainsValue(usuwanaGra));
-           Assert.IsFalse(data.gry.ContainsKey(usuwanaGra.id));
+           Assert.IsFalse(data.gry.ContainsKey(usuwanaGra.Id));
         }
 
         [TestMethod]

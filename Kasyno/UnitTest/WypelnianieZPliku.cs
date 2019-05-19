@@ -27,12 +27,12 @@ namespace UnitTest
                 foreach (string[] line in dataList)
                 {
                     Klient klient = new Klient { imie = line[0], nazwisko = line[1], wiek = Int16.Parse(line[2]), adresEmail = line[3]};
-                    Gra gra = new Gra { id = Int16.Parse(line[4]), nazwa = line[5]};
+                    Gra gra = new Gra { Id = Int16.Parse(line[4]), nazwa = line[5]};
                     StanGry stan = new StanGry { gra = gra, dataUruchomienia = new DateTimeOffset(new DateTime(Int32.Parse(line[6]), Int32.Parse(line[7]), Int32.Parse(line[8]))) };
                     UdzialWGrze udzial = new UdzialWGrze { stangry = stan, klient = klient };
 
                     klienci.Add(klient);
-                    gry.Add(gra.id, gra);
+                    gry.Add(gra.Id, gra);
                     stanygier.Add(stan);
                     udzialywgrze.Add(udzial);
                 }

@@ -44,17 +44,17 @@ namespace UnitTest
 
             Gra gra1 = new Gra()
             {
-                id = 0023,
+                Id = 0023,
                 nazwa = "Ruletka"
             };
             Gra gra2 = new Gra()
             {
-                id = 0028,
+                Id = 0028,
                 nazwa = "Baccarad",
             };
             Gra gra3 = new Gra()
             {
-                id = 0037,
+                Id = 0037,
                 nazwa = "Craps",
             };
 
@@ -95,9 +95,9 @@ namespace UnitTest
             klienci.Add(k1);
             klienci.Add(k2);
             klienci.Add(k3);
-            gry.Add(gra1.id, gra1);
-            gry.Add(gra2.id, gra2);
-            gry.Add(gra3.id, gra3);
+            gry.Add(gra1.Id, gra1);
+            gry.Add(gra2.Id, gra2);
+            gry.Add(gra3.Id, gra3);
             stanygier.Add(stangry1);
             stanygier.Add(stangry2);
             stanygier.Add(stangry3);

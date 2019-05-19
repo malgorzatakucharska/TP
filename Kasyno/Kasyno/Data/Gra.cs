@@ -8,7 +8,7 @@ namespace Kasyno.Data
 {
     public class Gra
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string nazwa { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace Kasyno.MainLogic
             string data = "";
             foreach (Gra gra in gry)
             {
-                data += gra.id + " " + gra.nazwa + " " + "\n";
+                data += gra.Id + " " + gra.nazwa + " " + "\n";
             }
 
             return data;
@@ -42,7 +42,7 @@ namespace Kasyno.MainLogic
             string data = "";
             foreach (UdzialWGrze udzial in udzialywgrze)
             {
-                data += udzial.klient.imie + " " + udzial.klient.nazwisko + " " + udzial.stangry.gra.id + " " + udzial.stangry.dataUruchomienia + "\n";
+                data += udzial.klient.imie + " " + udzial.klient.nazwisko + " " + udzial.stangry.gra.Id + " " + udzial.stangry.dataUruchomienia + "\n";
             }
             return data;
         }
@@ -52,7 +52,7 @@ namespace Kasyno.MainLogic
             string data = "";
             foreach (StanGry stan in stanygier)
             {
-                data += stan.gra.id + " " + stan.dataUruchomienia + "\n";
+                data += stan.gra.Id + " " + stan.dataUruchomienia + "\n";
             }
             return data;
         }
@@ -63,7 +63,7 @@ namespace Kasyno.MainLogic
             foreach(UdzialWGrze udzial in udzialywgrze)
             {
                 data += udzial.klient.imie + " " + udzial.klient.nazwisko + " " + udzial.klient.wiek + " " + udzial.klient.adresEmail + " " +
-                    udzial.stangry.dataUruchomienia + " " + udzial.stangry.gra.id + " " + "\n" +
+                    udzial.stangry.dataUruchomienia + " " + udzial.stangry.gra.Id + " " + "\n" +
                     "#########################################################" + "\n";
             }
             return data;
@@ -91,7 +91,7 @@ namespace Kasyno.MainLogic
 
         public void AddGra(Gra gra)
         {
-            bool isGraExist = repository.GetAllGry().Where(x => x.id == gra.id).Any();
+            bool isGraExist = repository.GetAllGry().Where(x => x.Id == gra.Id).Any();
 
             if (!isGraExist)
             {
@@ -101,7 +101,7 @@ namespace Kasyno.MainLogic
 
         public void AddCDState(Gra gra)
         {
-            bool isGraExist = repository.GetAllGry().Where(x => x.id == gra.id).Any();
+            bool isGraExist = repository.GetAllGry().Where(x => x.Id == gra.Id).Any();
             DateTimeOffset biezacaData = DateTimeOffset.Now;
 
             if (isGraExist)
@@ -122,7 +122,7 @@ namespace Kasyno.MainLogic
 
         public void UpdateGra(int id, Gra gra)
         {
-            bool isGraExist = repository.GetAllGry().Where(x => x.id == id).Any();
+            bool isGraExist = repository.GetAllGry().Where(x => x.Id == id).Any();
 
             if (isGraExist)
             {
@@ -162,7 +162,7 @@ namespace Kasyno.MainLogic
 
         public void DeleteGra(int i)
         {
-            bool isGraExist = repository.GetAllGry().Where(x => x.id == i).Any();
+            bool isGraExist = repository.GetAllGry().Where(x => x.Id == i).Any();
 
             if (isGraExist)
             {
@@ -197,7 +197,7 @@ namespace Kasyno.MainLogic
 
         public Dictionary<int, Gra> GetGraById(int id)
         {
-            return repository.GetAllGry().Where(d => d.id == id).ToDictionary(d => d.id);
+            return repository.GetAllGry().Where(d => d.Id == id).ToDictionary(d => d.Id);
         }
     }
 }
