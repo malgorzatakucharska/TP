@@ -44,7 +44,7 @@ namespace UnitTest
 
             Gra gra1 = new Gra()
             {
-                id = 0021,
+                id = 0023,
                 nazwa = "Ruletka"
             };
             Gra gra2 = new Gra()

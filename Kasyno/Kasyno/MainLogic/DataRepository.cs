@@ -16,6 +16,7 @@ namespace Kasyno.MainLogic
         {
             this.filler = filler;
             this.data = data;
+            filler.Fill(data);
         }
         // medody Add
         public void AddKlient(Klient klient)

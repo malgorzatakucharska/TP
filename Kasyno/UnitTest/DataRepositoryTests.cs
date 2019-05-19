@@ -259,7 +259,7 @@ namespace UnitTest
         {
             Gra gra = new Gra()
             {
-                id = 0021,
+                id = 0023,
                 nazwa = "JednorekiBandyta"
             };
 
@@ -271,7 +271,7 @@ namespace UnitTest
             Assert.AreEqual(oldDictSize, data.gry.Count);
 
             //sprawdza wlasciwosci
-            //Assert.AreEqual(gra.id, data.gry[gra.id].id);
+            Assert.AreEqual(gra.id, data.gry[gra.id].id);
             Assert.AreEqual(gra.nazwa, data.gry[gra.id].nazwa);
 
         }
@@ -284,14 +284,14 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0021,
+                id = 0028,
                 nazwa = "JednorekiBandyta"
             };
 
             StanGry cdState = new StanGry()
             {
                 gra = gra,
-                dataUruchomienia = new DateTimeOffset(new DateTime(2019, 15, 04))
+                dataUruchomienia = new DateTimeOffset(new DateTime(2019, 05, 04))
             };
 
             dataRepository.UpdateStanGry(i, cdState);
@@ -314,14 +314,14 @@ namespace UnitTest
 
             Gra gra = new Gra()
             {
-                id = 0021,
+                id = 0028,
                 nazwa = "JednorekiBandyta"
             };
 
             StanGry cdState = new StanGry()
             {
                 gra = gra,
-                dataUruchomienia = new DateTimeOffset(new DateTime(2019, 15, 04))
+                dataUruchomienia = new DateTimeOffset(new DateTime(2019, 05, 04))
             };
 
             Klient klient = new Klient()
@@ -371,7 +371,7 @@ namespace UnitTest
         public void DeleteGraTest()
         {
             int statyrozmiar = data.gry.Count;
-            int i = 0021;
+            int i = 0023;
 
             Gra usuwanaGra = data.gry[i];
 
@@ -381,25 +381,25 @@ namespace UnitTest
             Assert.AreNotEqual(statyrozmiar, data.gry.Count);
 
             //sprawdza czy kolekcja nie zawiera elementu
-            Assert.IsFalse(data.gry.ContainsValue(usuwanaGra));
-            Assert.IsFalse(data.gry.ContainsKey(usuwanaGra.id));
+           Assert.IsFalse(data.gry.ContainsValue(usuwanaGra));
+           Assert.IsFalse(data.gry.ContainsKey(usuwanaGra.id));
         }
+
         [TestMethod]
         public void DeleteStanGryTest()
         {
+            int staryrozmiar = data.stanygier.Count;
+            int i = new Random().Next(0, staryrozmiar - 1);
 
-            int oldCollectionSize = data.stanygier.Count;
-            int i = new Random().Next(0, oldCollectionSize - 1);
-
-            StanGry removedCDState = data.stanygier[i];
+            StanGry usuwanystanGry = data.stanygier[i];
 
             dataRepository.DeleteStanGry(i);
 
             //sprawdza, czy rozmiar sie zmiejszył
-            Assert.AreNotEqual(oldCollectionSize, data.stanygier.Count);
+            Assert.AreNotEqual(staryrozmiar, data.stanygier.Count);
 
             //sprawdza czy obiekt został usunięty
-            Assert.IsFalse(data.stanygier.Contains(removedCDState));
+            Assert.IsFalse(data.stanygier.Contains(usuwanystanGry));
         }
         [TestMethod]
         public void DeleteUdzialWGrzeTest()
