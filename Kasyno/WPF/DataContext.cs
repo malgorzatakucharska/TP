@@ -19,7 +19,7 @@ namespace WPF
         public DbSet<UdzialWGrze> Udzialy { get; set; }
 
         public void inicjalizuj() {
-            using (var contex = new DataContext())
+            using (var context = new DataContext())
             {
                 Klient k1 = new Klient()
                 {
@@ -94,20 +94,21 @@ namespace WPF
                     klient = k3
                 };
 
-                Klienci.Add(k1);
-                Klienci.Add(k2);
-                Klienci.Add(k3);
-                Gry.Add(gra1);
-                Gry.Add(gra2);
-                Gry.Add(gra3);
-                StanyGier.Add(stangry1);
-                StanyGier.Add(stangry2);
-                StanyGier.Add(stangry3);
-                Udzialy.Add(udzial1);
-                Udzialy.Add(udzial2);
-                Udzialy.Add(udzial3);
+                context.Klienci.Add(k1);
+                context.Klienci.Add(k2);
+                context.Klienci.Add(k3);
+                context.Gry.Add(gra1);
+                context.Gry.Add(gra2);
+                context.Gry.Add(gra3);
+                context.StanyGier.Add(stangry1);
+                context.StanyGier.Add(stangry2);
+                context.StanyGier.Add(stangry3);
+                context.Udzialy.Add(udzial1);
+                context.Udzialy.Add(udzial2);
+                context.Udzialy.Add(udzial3);
 
-                contex.SaveChanges();
+
+                context.SaveChanges();
             }
         }
         }
