@@ -46,7 +46,7 @@ using System.Windows;
 //      Wersja główna
 //      Wersja pomocnicza
 //      Numer kompilacji
-//      Rewizja
+//      Poprawka
 //
 // Możesz określić wszystkie wartości lub użyć domyślnych numerów kompilacji i poprawki
 // przy użyciu symbolu „*”, tak jak pokazano poniżej:

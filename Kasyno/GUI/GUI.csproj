@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9474ED75-4670-4B73-9D5D-4C9BC13AE5C8}</ProjectGuid>
+    <ProjectGuid>{7105C2B6-FDE3-4447-BD7F-736536BB40FC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>GUI</RootNamespace>
     <AssemblyName>GUI</AssemblyName>
@@ -104,14 +104,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj">
-      <Project>{a59f05f5-8179-4ece-a825-a636b19ba694}</Project>
+      <Project>{a6c2f2a9-9a69-4abd-83da-8bda35c6286c}</Project>
       <Name>ServiceLayer</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

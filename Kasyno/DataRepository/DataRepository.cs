@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataRepository
 {
-    class Class1
+    public class DataRepository
     {
     }
 }

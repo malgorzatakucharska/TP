@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{099E720F-1A77-42FA-838B-BC5DCA1BA28E}</ProjectGuid>
+    <ProjectGuid>{CF614BBB-B3CD-4C4D-A0B7-70250DF3ACA8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UnitTest2</RootNamespace>
@@ -57,15 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataRepository\DataRepository.csproj">
-      <Project>{1283bd5a-dbd6-40ba-9f24-3c242af8f2c4}</Project>
+      <Project>{92b10c87-ed45-476b-8624-2727298ba42d}</Project>
       <Name>DataRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\GUI\GUI.csproj">
-      <Project>{9474ed75-4670-4b73-9d5d-4c9bc13ae5c8}</Project>
+      <Project>{7105c2b6-fde3-4447-bd7f-736536bb40fc}</Project>
       <Name>GUI</Name>
     </ProjectReference>
     <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj">
-      <Project>{a59f05f5-8179-4ece-a825-a636b19ba694}</Project>
+      <Project>{a6c2f2a9-9a69-4abd-83da-8bda35c6286c}</Project>
       <Name>ServiceLayer</Name>
     </ProjectReference>
   </ItemGroup>
