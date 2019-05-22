@@ -21,7 +21,6 @@ namespace UnitTest2
                 Surname = "Kowalski",
                 Age = 30,
                 Email = "jkowalski@gmail.com",
-                Phone = "600100200",
             };
 
             DataRepository.DataRepository.AddCustomer(cust);
