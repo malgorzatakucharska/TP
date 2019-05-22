@@ -22,5 +22,6 @@ namespace GUI.MinimalMVVM
         {
             _action();
         }
+
     }
 }

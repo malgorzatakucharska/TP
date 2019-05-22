@@ -27,7 +27,6 @@ namespace GUI.ViewModel
             DeleteCustomerCommand = new DelegateCommand(DeleteCustomer);
             UpdateCustomerCommand = new DelegateCommand(UpdateCustomer);
             SaveChangesCommand = new DelegateCommand(SaveChanges);
-           // ShowPopupCommand = new DelegateCommand(ShowPopup);
         }
 
         public DelegateCommand FetchCustomerCommand { get; private set; }
@@ -45,49 +44,42 @@ namespace GUI.ViewModel
 
         public Customer CurrentCustomer
         {
-
             get { return _currentCustomer; }
             set { _currentCustomer = value; RaisePropertyEventChanged(); }
         }
 
         public CustomerModel CustomerModel
         {
-
             get { return _customerModel; }
             set { _customerModel = value; Customers = new ObservableCollection<Customer>(value.Customer); }
         }
 
         public int NewCustomerID
         {
-
             get { return _newCustomerID; }
             set { _newCustomerID = value; RaisePropertyEventChanged(); }
         }
 
         public string NewCustomerName
         {
-
             get { return _newCustomerName; }
             set { _newCustomerName = value; RaisePropertyEventChanged(); }
         }
 
         public string NewCustomerSurname
         {
-
             get { return _newCustomerSurname; }
             set { _newCustomerSurname = value; RaisePropertyEventChanged(); }
         }
 
         public short NewCustomerAge
         {
-
             get { return _newCustomerAge; }
             set { _newCustomerAge = value; RaisePropertyEventChanged(); }
         }
 
         public string NewCustomerEmail
         {
-
             get { return _newCustomerEmail; }
             set { _newCustomerEmail = value; RaisePropertyEventChanged(); }
         }
@@ -98,7 +90,6 @@ namespace GUI.ViewModel
             if (DataRepository.DataRepository.CheckIfIDIsUnique(_newCustomerID) && !_newCustomerName.Any(c => char.IsDigit(c) || char.IsWhiteSpace(c))
                 && !_newCustomerSurname.Any(c => char.IsDigit(c) || char.IsWhiteSpace(c)))
             {
-
                 Customer customer = new Customer()
                 {
                     Id = _newCustomerID,
@@ -127,7 +118,6 @@ namespace GUI.ViewModel
             if (!_currentCustomer.Name.Any(c => char.IsDigit(c))
                 && !_currentCustomer.Surname.Any(c => char.IsDigit(c)))
              {
-
                 Task.Run(() => { DataRepository.DataRepository.UpdateCustomer(_currentCustomer); });
             }
             else
@@ -139,9 +129,7 @@ namespace GUI.ViewModel
         public void SaveChanges()
         {
             Task.Run(() => { DataRepository.DataRepository.SaveChanges(); });
-        }
-
-      
+        }      
 
     }
 }
