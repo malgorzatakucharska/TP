@@ -11,5 +11,13 @@ namespace DataRepository
     {
         private static CustomersDataContext context = new CustomersDataContext();
 
+        public static List<Customer> SelectAllCustomer()
+        {
+            List<Customer> allCustomers =
+                 (from customers in context.customers
+                  select customers).ToList();
+
+            return allCustomers;
+        }
     }
 }
