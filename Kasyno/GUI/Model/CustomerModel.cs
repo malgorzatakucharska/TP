@@ -12,7 +12,7 @@ namespace GUI.Model
     {
         public IEnumerable<Customer> Customer
         {
-            get { return DataRepository.DataRepository.SelectAllCustomer(); }
+            get { return DataRepository.DataRepository.SelectAllCustomers(); }
         }
     }
 }
