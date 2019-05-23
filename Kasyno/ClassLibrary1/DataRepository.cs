@@ -11,7 +11,7 @@ namespace DataRepository
     {
         private static CustomersDataContext context = new CustomersDataContext();
 
-        public static List<Customer> SelectAllCustomer()
+        public static List<Customer> SelectAllCustomers()
         {
             List<Customer> allCustomers =
                  (from customers in context.customers
