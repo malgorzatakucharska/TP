@@ -29,6 +29,7 @@ namespace GUI.ViewModel
             DeleteCustomerCommand = new DelegateCommand(DeleteCustomer);
             UpdateCustomerCommand = new DelegateCommand(UpdateCustomer);
             SaveChangesCommand = new DelegateCommand(SaveChanges);
+
             ShowPopupCommand = new DelegateCommand(ShowPopup);
         }
 
@@ -37,6 +38,7 @@ namespace GUI.ViewModel
         public DelegateCommand UpdateCustomerCommand { get; private set; }
         public DelegateCommand DeleteCustomerCommand { get; private set; }
         public DelegateCommand SaveChangesCommand { get; private set; }
+
         public DelegateCommand ShowPopupCommand { get; private set; }
 
         public ObservableCollection<Customer> Customers
@@ -142,6 +144,7 @@ namespace GUI.ViewModel
         {
             Task.Run(() => { DataRepository.DataRepository.SaveChanges(); });
         }
+
 
         public void ShowPopup()
         {
