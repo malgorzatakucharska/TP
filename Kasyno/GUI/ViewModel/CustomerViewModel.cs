@@ -98,7 +98,7 @@ namespace GUI.ViewModel
         {
 
             if (DataRepository.DataRepository.CheckIfIDIsUnique(_newCustomerID) && !_newCustomerName.Any(c => char.IsDigit(c) || char.IsWhiteSpace(c))
-                && !_newCustomerSurname.Any(c => char.IsDigit(c) || char.IsWhiteSpace(c)))
+                && !_newCustomerSurname.Any(c => char.IsDigit(c) || char.IsWhiteSpace(c)) && !_newCustomerPhone.Any(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
             {
                 Customer customer = new Customer()
                 {
@@ -106,6 +106,7 @@ namespace GUI.ViewModel
                     Name = _newCustomerName,
                     Surname = _newCustomerSurname,
                     Age = _newCustomerAge,
+                    Phone = _newCustomerPhone,
                     Email = _newCustomerEmail
                 };
 
@@ -126,7 +127,8 @@ namespace GUI.ViewModel
         public void UpdateCustomer()
         {
             if (!_currentCustomer.Name.Any(c => char.IsDigit(c))
-                && !_currentCustomer.Surname.Any(c => char.IsDigit(c)))
+                && !_currentCustomer.Surname.Any(c => char.IsDigit(c))
+                && !_currentCustomer.Phone.Any(c => char.IsLetter(c)))
              {
                 Task.Run(() => { DataRepository.DataRepository.UpdateCustomer(_currentCustomer); });
             }
