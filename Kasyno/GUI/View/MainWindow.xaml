@@ -11,6 +11,7 @@
         <ViewModel:CustomerViewModel/>
     </Window.DataContext>
     <Grid>
+
         <ListView ItemsSource="{Binding Customers}" SelectedItem ="{Binding CurrentCustomer}"  Margin="0,0,0,252">
             <ListView.ItemTemplate>
                 <DataTemplate>
