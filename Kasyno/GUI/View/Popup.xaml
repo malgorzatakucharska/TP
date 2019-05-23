@@ -1,0 +1,32 @@
+﻿<Window x:Class="GUI.View.Popup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI.View"
+        xmlns:ViewModel="clr-namespace:GUI.ViewModel"
+        mc:Ignorable="d"
+        Title="Popup" Height="279.785" Width="377.328">
+    <Window.DataContext>
+        <ViewModel:CustomerViewModel/>
+    </Window.DataContext>
+    <Grid Height="253" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="331*"/>
+            <ColumnDefinition Width="57*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="44,33,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerName, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="214,33,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerSurname, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="44,83,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerID, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="214,83,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerAge, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="44,133,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerEmail, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="214,133,0,0" TextWrapping="Wrap" Text="{Binding Path=NewCustomerPhone, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="44,7,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="Surname" HorizontalAlignment="Left" Margin="214,7,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="44,57,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="Age" HorizontalAlignment="Left" Margin="214,57,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="E-mail" HorizontalAlignment="Left" Margin="44,107,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label Content="Phone number" HorizontalAlignment="Left" Margin="214,107,0,0" VerticalAlignment="Top" Width="96"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="44,194,0,0" VerticalAlignment="Top" Width="75" Command="{Binding AddCustomerCommand}"/>
+    </Grid>
+</Window>

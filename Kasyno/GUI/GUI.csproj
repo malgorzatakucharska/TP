@@ -66,6 +66,9 @@
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Popup.xaml.cs">
+      <DependentUpon>Popup.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MinimalMVVM\ViewModelBase.cs" />
@@ -107,6 +110,10 @@
   <ItemGroup />
   <ItemGroup>
     <Page Include="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Popup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
