@@ -86,6 +86,9 @@ namespace ServiceLayer
 
         private string _Email;
 
+        private string _Phone;
+
+
         #region Extensibility Method Definitions
         partial void OnLoaded();
         partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -100,6 +103,8 @@ namespace ServiceLayer
         partial void OnAgeChanged();
         partial void OnEmailChanging(string value);
         partial void OnEmailChanged();
+        partial void OnPhoneChanging(string value);
+        partial void OnPhoneChanged();
         #endregion
 
         public Customer()
@@ -203,6 +208,26 @@ namespace ServiceLayer
                     this._Email = value;
                     this.SendPropertyChanged("Email");
                     this.OnEmailChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Phone", DbType = "NChar(40)")]
+        public string Phone
+        {
+            get
+            {
+                return this._Phone;
+            }
+            set
+            {
+                if ((this._Phone != value))
+                {
+                    this.OnPhoneChanging(value);
+                    this.SendPropertyChanging();
+                    this._Phone = value;
+                    this.SendPropertyChanged("Phone");
+                    this.OnPhoneChanged();
                 }
             }
         }

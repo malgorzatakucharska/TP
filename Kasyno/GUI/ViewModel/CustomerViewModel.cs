@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using GUI.MinimalMVVM;
 using GUI.Model;
+using GUI.View;
 using ServiceLayer;
 using DataRepository;
 using System.Windows;
@@ -19,6 +20,7 @@ namespace GUI.ViewModel
         private string _newCustomerSurname;
         private short _newCustomerAge;
         private string _newCustomerEmail;
+        private string _newCustomerPhone;
 
         public CustomerViewModel()
         {
@@ -27,6 +29,7 @@ namespace GUI.ViewModel
             DeleteCustomerCommand = new DelegateCommand(DeleteCustomer);
             UpdateCustomerCommand = new DelegateCommand(UpdateCustomer);
             SaveChangesCommand = new DelegateCommand(SaveChanges);
+            ShowPopupCommand = new DelegateCommand(ShowPopup);
         }
 
         public DelegateCommand FetchCustomerCommand { get; private set; }
@@ -84,6 +87,13 @@ namespace GUI.ViewModel
             set { _newCustomerEmail = value; RaisePropertyEventChanged(); }
         }
 
+        public string NewCustomerPhone
+        {
+
+            get { return _newCustomerPhone; }
+            set { _newCustomerPhone = value; RaisePropertyEventChanged(); }
+        }
+
         public void AddCustomer()
         {
 
@@ -129,7 +139,12 @@ namespace GUI.ViewModel
         public void SaveChanges()
         {
             Task.Run(() => { DataRepository.DataRepository.SaveChanges(); });
-        }      
+        }
 
+        public void ShowPopup()
+        {
+            Popup popup = new Popup();
+            popup.Show();
+        }
     }
 }
