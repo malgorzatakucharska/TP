@@ -9,20 +9,20 @@ namespace DataRepository
 {
     public class DataRepository
     {
-        private static CustomersDataContext context = new CustomersDataContext();
-
+        private static dcontext context = new dcontext();
+         
         public static List<Customer> SelectAllCustomers()
         {
             List<Customer> allCustomers =
-                 (from customers in context.customers
-                  select customers).ToList();
+                 (from customers in context.Customer
+                  select customers).ToList(); 
 
             return allCustomers;
         }
         public static void AddCustomer(Customer customer)
         {
 
-            context.customers.InsertOnSubmit(customer);
+            context.Customer.InsertOnSubmit(customer);
             SaveChanges();
         }
 
@@ -30,13 +30,13 @@ namespace DataRepository
         {
 
             var matchedCustomers =
-                from customers in context.customers
+                from customers in context.Customer
                 where customers.Id == customerID
                 select customers;
 
             foreach (Customer customer in matchedCustomers)
             {
-                context.customers.DeleteOnSubmit(customer);
+                context.Customer.DeleteOnSubmit(customer);
             }
 
             SaveChanges();
@@ -46,7 +46,7 @@ namespace DataRepository
         {
 
             var matchedCustomers =
-                from customers in context.customers
+                from customers in context.Customer
                 where customers.Id == cust.Id
                 select customers;
 
@@ -66,7 +66,7 @@ namespace DataRepository
             bool isIDUnique = true;
 
             var matchedCustomer =
-                from customers in context.customers
+                from customers in context.Customer
                 where customers.Id == currentID
                 select customers;
 

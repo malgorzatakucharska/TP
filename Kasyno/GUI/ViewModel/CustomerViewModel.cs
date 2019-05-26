@@ -112,6 +112,7 @@ namespace GUI.ViewModel
                     Email = _newCustomerEmail
                 };
 
+
                 Task.Run(() => { DataRepository.DataRepository.AddCustomer(customer); });
             }
             else
