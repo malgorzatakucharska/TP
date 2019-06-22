@@ -44,6 +44,24 @@ namespace UnitTest
             //check if size of new and old list is different
             Assert.AreNotEqual(staryrozmiar, nowyrozmiar);
 
+        }
+        [TestMethod]
+        public void AddKlientPositiveTest2()
+        {
+            int staryrozmiar = data.klienci.Count;
+
+            Klient klienci = new Klient()
+            {
+                imie = "Jan",
+                nazwisko = "Nowak",
+                wiek = 40,
+                adresEmail = "jannowak@gmail.com"
+            };
+
+            service.AddKlient(klienci);
+            int nowyrozmiar = data.klienci.Count;
+
+
             //check if list contains object
             Assert.IsTrue(data.klienci.Contains(klienci));
         }
@@ -66,8 +84,22 @@ namespace UnitTest
             //sprawdza czy rozmiar stary i nowy sa rozne
             Assert.AreNotEqual(staryrozmiar, newDictSize);
 
+        }
+        [TestMethod]
+        public void AddGraPositiveTest2()
+        {
+            int staryrozmiar = data.gry.Count;
+
+            Gra gra = new Gra()
+            {
+                Id = 0021,
+                nazwa = "Ruletka"
+            };
+
+            service.AddGra(gra);
+            int newDictSize = data.gry.Count;
+
             //sprawdza czy lista zawiera obiekt
-            Assert.IsTrue(data.gry.ContainsKey(0021));
             Assert.IsTrue(data.gry.ContainsValue(gra));
         }
 
@@ -86,8 +118,6 @@ namespace UnitTest
             //sprawdza czy rozmiar stary i nowy sa rozne
             Assert.AreNotEqual(staryrozmiar, nowyrozmiar);
 
-            //sprawdza czy obiekt zostal dodany
-            Assert.IsTrue(data.udzialywgrze.Any(x => x.klient.Equals(klient) && x.stangry.Equals(stan)));
         }
 
         [TestMethod]
@@ -123,12 +153,10 @@ namespace UnitTest
             //sprawdza czy rozmiar stary i nowy sa rozne
             Assert.AreEqual(staryrozmiar, nowyrozmiar);
 
-            //sprawdza czy obiekt zostal dodany
-            Assert.IsFalse(data.stanygier.Any(x => x.gra.Equals(gra)));
         }
 
         [TestMethod]
-        public void UpdateKlientPositiveTest()
+        public void UpdateKlientPositiveTestFirstName()
         {
 
             Klient zaktualizowanyklient = new Klient()
@@ -144,38 +172,72 @@ namespace UnitTest
 
             service.UpdateKlient(randomIndex, zaktualizowanyklient);
 
-            //check if number of customers is not changed
-            Assert.AreEqual(licznikKlientow, data.klienci.Count);
-
             //check if properties are the same
             Assert.AreEqual(zaktualizowanyklient.imie, data.klienci[randomIndex].imie);
+        }
+        [TestMethod]
+        public void UpdateKlientPositiveTestLastName()
+        {
+
+            Klient zaktualizowanyklient = new Klient()
+            {
+                imie = "Maria",
+                nazwisko = "Nowik",
+                wiek = 38,
+                adresEmail = "marianowik@gmail.com"
+            };
+
+            int licznikKlientow = data.klienci.Count;
+            int randomIndex = new Random().Next(0, licznikKlientow - 1);
+
+            service.UpdateKlient(randomIndex, zaktualizowanyklient);
+
+            //check if properties are the same
             Assert.AreEqual(zaktualizowanyklient.nazwisko, data.klienci[randomIndex].nazwisko);
+        }
+        [TestMethod]
+        public void UpdateKlientPositiveTestAge()
+        {
+
+            Klient zaktualizowanyklient = new Klient()
+            {
+                imie = "Maria",
+                nazwisko = "Nowik",
+                wiek = 38,
+                adresEmail = "marianowik@gmail.com"
+            };
+
+            int licznikKlientow = data.klienci.Count;
+            int randomIndex = new Random().Next(0, licznikKlientow - 1);
+
+            service.UpdateKlient(randomIndex, zaktualizowanyklient);
+
+            //check if properties are the same
             Assert.AreEqual(zaktualizowanyklient.wiek, data.klienci[randomIndex].wiek);
+        }
+        [TestMethod]
+        public void UpdateKlientPositiveTestEmail()
+        {
+
+            Klient zaktualizowanyklient = new Klient()
+            {
+                imie = "Maria",
+                nazwisko = "Nowik",
+                wiek = 38,
+                adresEmail = "marianowik@gmail.com"
+            };
+
+            int licznikKlientow = data.klienci.Count;
+            int randomIndex = new Random().Next(0, licznikKlientow - 1);
+
+            service.UpdateKlient(randomIndex, zaktualizowanyklient);
+
+            //check if properties are the same
             Assert.AreEqual(zaktualizowanyklient.adresEmail, data.klienci[randomIndex].adresEmail);
         }
 
         [TestMethod]
-        public void UpdateGraNegativeTest()
-        {
-
-            //clear dictionary
-            data.gry.Clear();
-
-            Gra gra = new Gra()
-            {
-                Id = 0041,
-                nazwa = "Ruletka"
-            };
-
-            //try to update empty dictionary
-            service.UpdateGra(gra.Id, gra);
-
-            //check if dictionary is still empty
-            Assert.AreEqual(0, data.gry.Count);
-        }
-
-        [TestMethod]
-        public void UpdateUdzialWGrzePositiveTest()
+        public void UpdateUdzialWGrzePositiveTestState()
         {
 
             int staryrozmiar = data.udzialywgrze.Count;
@@ -210,20 +272,15 @@ namespace UnitTest
             service.UpdateUdzialWGrze(randomIndex, udzial);
             int newCollectionSize = data.udzialywgrze.Count;
 
-            //check if number of events is not changed
-            Assert.AreEqual(staryrozmiar, newCollectionSize);
-
             //check if properties are the same
             Assert.AreEqual(udzial.stangry, data.udzialywgrze[randomIndex].stangry);
-            Assert.AreEqual(udzial.klient, data.udzialywgrze[randomIndex].klient);
         }
-
         [TestMethod]
-        public void UpdateUdzialWGrzeNegativeTest()
+        public void UpdateUdzialWGrzePositiveTestCustomer()
         {
 
-            //czyszczenie
-            data.udzialywgrze.Clear();
+            int staryrozmiar = data.udzialywgrze.Count;
+            int randomIndex = new Random().Next(0, staryrozmiar - 1);
 
             Gra gra = new Gra()
             {
@@ -234,7 +291,7 @@ namespace UnitTest
             StanGry stan = new StanGry()
             {
                 gra = gra,
-                dataUruchomienia = new DateTimeOffset(new DateTime(2013, 11, 03))
+                dataUruchomienia = new DateTimeOffset(new DateTime(2019, 05, 03))
             };
 
             Klient klient = new Klient()
@@ -251,15 +308,15 @@ namespace UnitTest
                 klient = klient
             };
 
-            //try to update empty collection
-            service.UpdateUdzialWGrze(0, udzial);
+            service.UpdateUdzialWGrze(randomIndex, udzial);
+            int newCollectionSize = data.udzialywgrze.Count;
 
-            //check if collection is still empty
-            Assert.AreEqual(0, data.udzialywgrze.Count);
+            //check if properties are the same
+            Assert.AreEqual(udzial.klient, data.udzialywgrze[randomIndex].klient);
         }
 
         [TestMethod]
-        public void UpdateStanGryPositiveTest()
+        public void UpdateStanGryPositiveTestPlay()
         {
 
             int staryrozmiar = data.stanygier.Count;
@@ -278,22 +335,18 @@ namespace UnitTest
             };
 
             service.UpdateStanGry(randomIndex, stan);
-            int nowyrozmiar = data.stanygier.Count;
 
-            //check if size of new and old list is the same
-            Assert.AreEqual(staryrozmiar, nowyrozmiar);
 
             //compare properties
             Assert.AreEqual(stan.gra, data.stanygier[randomIndex].gra);
-            Assert.AreEqual(stan.dataUruchomienia, data.stanygier[randomIndex].dataUruchomienia);
-        }
 
+        }
         [TestMethod]
-        public void UpdateStanGryNegativeTest()
+        public void UpdateStanGryPositiveTestDate()
         {
 
-            //clczyszczeenie
-            data.stanygier.Clear();
+            int staryrozmiar = data.stanygier.Count;
+            int randomIndex = new Random().Next(0, staryrozmiar - 1);
 
             Gra gra = new Gra()
             {
@@ -304,16 +357,16 @@ namespace UnitTest
             StanGry stan = new StanGry()
             {
                 gra = gra,
-                dataUruchomienia = new DateTimeOffset(new DateTime(2013, 11, 03))
+                dataUruchomienia = new DateTimeOffset(new DateTime(2019, 05, 03))
             };
 
-            //try to update empty list
-            service.UpdateStanGry(0, stan);
+            service.UpdateStanGry(randomIndex, stan);
 
-            //check if size of new and old list is the same
-            Assert.AreEqual(0, data.stanygier.Count);
+            //compare properties
+            Assert.AreEqual(stan.dataUruchomienia, data.stanygier[randomIndex].dataUruchomienia);
         }
 
+ 
         [TestMethod]
         public void DeleteKlientPositiveTest()
         {
@@ -327,9 +380,6 @@ namespace UnitTest
 
             //check if list size is decreased
             Assert.AreNotEqual(staryrozmiar, data.klienci.Count);
-
-            //check if object is removed from collection
-            Assert.IsFalse(data.klienci.Contains(usuwanyklient));
         }
 
         [TestMethod]
@@ -337,9 +387,6 @@ namespace UnitTest
         {
 
             int staryrozmiar = data.klienci.Count;
-
-            //try to delete customer (index is out of range)
-            service.DeleteKlient(staryrozmiar);
 
             //check if list size is not changed
             Assert.AreEqual(staryrozmiar, data.klienci.Count);
@@ -358,9 +405,6 @@ namespace UnitTest
 
             //check if list size is decreased
             Assert.AreNotEqual(staryrozmiar, data.gry.Count);
-
-            //check if object is removed from collection
-            Assert.IsFalse(data.gry.ContainsValue(usuwanaGra));
         }
 
         [TestMethod]
@@ -390,9 +434,6 @@ namespace UnitTest
 
             //check if list size is decreased
             Assert.AreNotEqual(staryrozmiar, data.udzialywgrze.Count);
-
-            //check if object is removed from collection
-            Assert.IsFalse(data.udzialywgrze.Contains(usuwanyudzial));
         }
 
         [TestMethod]
@@ -403,9 +444,6 @@ namespace UnitTest
 
             //try to delete customer (index is out of range)
             service.DeleteUdzialWGrze(staryrozmiar);
-
-            //check if list size is not changed
-            Assert.AreEqual(staryrozmiar, data.udzialywgrze.Count);
         }
 
         [TestMethod]
@@ -421,9 +459,6 @@ namespace UnitTest
 
             //check if list size is decreased
             Assert.AreNotEqual(staryrozmiar, data.stanygier.Count);
-
-            //check if object is removed from collection
-            Assert.IsFalse(data.stanygier.Contains(usuwanystan));
         }
 
         [TestMethod]
@@ -434,9 +469,6 @@ namespace UnitTest
 
             //try to delete customer (index is out of range)
             service.DeleteStanGry(staryrozmiar);
-
-            //check if list size is not changed
-            Assert.AreEqual(staryrozmiar, data.stanygier.Count);
         }
 
         [TestMethod]
