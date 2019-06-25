@@ -1,0 +1,11 @@
+C:\Users\Gosia\Desktop\TP-master\Kasyno\UnitTest\bin\Debug\UnitTest.dll
+C:\Users\Gosia\Desktop\TP-master\Kasyno\UnitTest\bin\Debug\UnitTest.pdb
+C:\Users\Gosia\Desktop\TP-master\Kasyno\UnitTest\bin\Debug\Kasyno.dll
+C:\Users\Gosia\Desktop\TP-master\Kasyno\UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Gosia\Desktop\TP-master\Kasyno\UnitTest\bin\Debug\Kasyno.pdb
+C:\Users\Gosia\Desktop\TP-master\Kasyno\UnitTest\bin\Debug\pl\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Gosia\Desktop\TP-master\Kasyno\UnitTest\obj\Debug\UnitTest.csprojAssemblyReference.cache
+C:\Users\Gosia\Desktop\TP-master\Kasyno\UnitTest\obj\Debug\UnitTest.csproj.CoreCompileInputs.cache
+C:\Users\Gosia\Desktop\TP-master\Kasyno\UnitTest\obj\Debug\UnitTest.csproj.CopyComplete
+C:\Users\Gosia\Desktop\TP-master\Kasyno\UnitTest\obj\Debug\UnitTest.dll
+C:\Users\Gosia\Desktop\TP-master\Kasyno\UnitTest\obj\Debug\UnitTest.pdb

@@ -76,6 +76,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataRepositoryTests.cs" />
     <Compile Include="DataServiceTest.cs" />
+    <Compile Include="TestyWydajnosci.cs" />
+    <Compile Include="WypelnianieStalymiDoTestowWyd.cs" />
     <Compile Include="WypelnianieStalymi.cs" />
     <Compile Include="WypelnianieZPliku.cs" />
   </ItemGroup>

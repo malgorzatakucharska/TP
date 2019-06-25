@@ -121,22 +121,6 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void AddUdzialWGrzeNegativeTest()
-        {
-            int staryrozmiar = data.udzialywgrze.Count;
-
-            StanGry stan = dataRepository.GetAllStanyGier().ElementAt(0);
-            Klient klient = dataRepository.GetAllKlienci().ElementAt(0);
-
-            service.AddUdzialWGrze(klient, stan);
-            int newListSize = data.udzialywgrze.Count;
-
-            //sprawdza czy rozmiar stary i nowy sa rozne
-            Assert.AreEqual(staryrozmiar, newListSize);
-        }
-
-
-        [TestMethod]
         public void AddStanGryNegativeTest()
         {
             int staryrozmiar = data.stanygier.Count;

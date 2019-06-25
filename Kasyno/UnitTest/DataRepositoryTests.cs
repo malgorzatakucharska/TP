@@ -20,6 +20,7 @@ namespace UnitTest
             data = new DataContext();
             filler = new WypelnianieStalymi();
             dataRepository = new DataRepository(filler, data);
+            //dataRepository.inicjalizuj();
         }
 
         //test dla metody add
@@ -527,5 +528,46 @@ namespace UnitTest
             Assert.AreNotEqual(oldCollectionSize, data.udzialywgrze.Count);
 
         }
+
+        // testy wydajnosciowe
+      /*  [TestMethod]
+        public void Wypelnianie10()
+        {
+            int n = 10;
+            while (n-- != 0)
+            {
+                dataRepository.inicjalizuj();
+            }
+        }
+
+        [TestMethod]
+        public void Wypelnianie1000()
+        {
+            int n = 1000;
+            while (n-- != 0)
+            {
+                dataRepository.inicjalizuj();
+            }
+        }
+
+        [TestMethod]
+        public void Wypelnianie100000()
+        {
+            int n = 100000;
+            while (n-- != 0)
+            {
+                dataRepository.inicjalizuj();
+            }
+        }
+
+        [TestMethod]
+        public void Wypelnianie1000000()
+        {
+            int n = 1000000;
+            while (n-- != 0)
+            {
+                dataRepository.inicjalizuj();
+            }
+        }*/
     }
 }
