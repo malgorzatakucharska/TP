@@ -74,8 +74,8 @@ namespace Kasyno.MainLogic
 
             if (!isUdzialWGrzeExist)
             {
-                UdzialWGrze evt = new UdzialWGrze() { klient = klient, stangry = stan };
-                repository.AddUdzialWGrze(evt);
+               UdzialWGrze evt = new UdzialWGrze() { klient = klient, stangry = stan };
+               repository.AddUdzialWGrze(evt);
             }
         }
 
@@ -85,7 +85,7 @@ namespace Kasyno.MainLogic
 
             if (!biezacyKlient.Contains(klient))
             {
-                repository.AddKlient(klient);
+               repository.AddKlient(klient);
             }
         }
 
@@ -104,10 +104,10 @@ namespace Kasyno.MainLogic
             bool isGraExist = repository.GetAllGry().Where(x => x.Id == gra.Id).Any();
             DateTimeOffset biezacaData = DateTimeOffset.Now;
 
-            if (isGraExist)
+           if (isGraExist)
             {
                 repository.AddStanGry(new StanGry() { gra = gra, dataUruchomienia = biezacaData });
-            }
+           }
         }
 
         public void UpdateKlient(int i, Klient klient)
