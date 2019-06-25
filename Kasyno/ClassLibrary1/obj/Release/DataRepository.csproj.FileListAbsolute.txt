@@ -1,0 +1,15 @@
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Release\Test.mdf
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Release\Test_log.ldf
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Release\Properties\Settings.Designer.cs
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Release\Properties\Settings.settings
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Release\DataRepository.cs
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Release\DataRepository.dll
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Release\DataRepository.pdb
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Release\ServiceLayer.dll
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Release\ServiceLayer.pdb
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Release\ServiceLayer.dll.config
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\obj\Release\DataRepository.csprojAssemblyReference.cache
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\obj\Release\DataRepository.csproj.CoreCompileInputs.cache
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\obj\Release\DataRepository.csproj.CopyComplete
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\obj\Release\DataRepository.dll
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\obj\Release\DataRepository.pdb

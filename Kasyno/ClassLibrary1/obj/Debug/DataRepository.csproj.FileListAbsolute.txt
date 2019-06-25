@@ -1,0 +1,17 @@
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\Customer.mdf
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\Customer.designer.cs
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\Properties\Settings.Designer.cs
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\Properties\Settings.settings
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\DataRepository.cs
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\DataRepository.dll
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\DataRepository.pdb
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\ServiceLayer.dll
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\ServiceLayer.pdb
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\ServiceLayer.dll.config
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\obj\Debug\DataRepository.csprojAssemblyReference.cache
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\obj\Debug\DataRepository.csproj.CoreCompileInputs.cache
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\obj\Debug\DataRepository.csproj.CopyComplete
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\obj\Debug\DataRepository.dll
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\obj\Debug\DataRepository.pdb
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\Test.mdf
+C:\Users\Gosia\Desktop\TP-master\Kasyno\ClassLibrary1\bin\Debug\Test_log.ldf
